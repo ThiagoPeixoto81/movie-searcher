@@ -10,6 +10,10 @@ input {
   font-weight: 700;
 }
 
+input:focus {
+  outline: none;
+}
+
 img {
   height: 300px;
   margin-bottom: 30px;
