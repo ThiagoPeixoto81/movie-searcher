@@ -1,0 +1,16 @@
+input {
+  width: 600px;
+  height: 70px;
+
+  background-color: #fff;
+  border-radius: 5px;
+
+  font-size: 32px;
+  color: #000;
+  font-weight: 700;
+}
+
+img {
+  height: 300px;
+  margin-bottom: 30px;
+}

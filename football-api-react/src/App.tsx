@@ -1,12 +1,12 @@
-import { useState } from 'react'
+import React from 'react'
 import './App.css'
+import SearchTeam from './pages/SearchTeam'
 
 function App() {
-
-  return (
-    <div className="App">
-    </div>
+  return(
+    <SearchTeam/>
   )
+  
 }
 
 export default App
