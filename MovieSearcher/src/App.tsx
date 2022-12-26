@@ -1,12 +1,12 @@
 import React from 'react'
 import './App.css'
-import SearchTeam from './pages/SearchTeam'
+import MovieSearcher from './pages/MovieSearcher'
 
 function App() {
-  return(
-    <SearchTeam/>
+  return (
+    <MovieSearcher />
   )
-  
+
 }
 
 export default App

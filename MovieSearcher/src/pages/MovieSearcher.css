@@ -15,6 +15,12 @@ input:focus {
 }
 
 img {
-  height: 300px;
-  margin-bottom: 30px;
+  width: 510px;
+  height: auto;
+}
+
+.searcher {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
