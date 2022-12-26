@@ -1,17 +1,23 @@
-input {
-  width: 600px;
-  height: 70px;
+.form-control,
+.form-control:focus,
+.form-control:active {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
 
-  background-color: #fff;
-  border-radius: 5px;
+  height: 50px;
+  width: 550px !important;
 
-  font-size: 32px;
-  color: #000;
-  font-weight: 700;
+  background: #D9D9D9 !important;
+  border-radius: 40px !important;
+
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px !important;
 }
 
-input:focus {
-  outline: none;
+.form-control::placeholder {
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
 }
 
 img {
@@ -23,4 +29,30 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.btn.btn-primary {
+  background-color: #5B66F0 !important;
+  width: 90px;
+  border-radius: 40px;
+}
+
+.btn.btn-primary:hover {
+  transform: scale(1.1);
+}
+
+.loadingDiv {
+  height: 500px;
+}
+
+.loadingSub {
+  font-size: 16px;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+}
+
+.spinner-border {
+  height: 100px !important;
+  width: 100px !important;
+  --bs-spinner-border-width: .8em !important;
 }
