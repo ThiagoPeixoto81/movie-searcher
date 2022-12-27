@@ -1,10 +1,11 @@
 .card {
   border: none;
   background-color: #565656 !important;
-  min-width: 1000px !important;
+  min-width: 550px;
   width: auto !important;
   min-height: 535px;
   height: auto !important;
+  max-height: 90vh;
 
   box-shadow: 24px 23px 24px rgba(0, 0, 0, 0.25);
   border-radius: 40px !important;
@@ -51,10 +52,54 @@
 
 .StatMain {
   color: #fff;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .Statcategory {
   color: #bdbdbd;
   font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    min-width: none !important;
+    width: 85% !important;
+    max-width: none !important;
+    max-height: none;
+  }
+
+  .poster {
+    width: 100px;
+    height: auto;
+  }
+
+  .movieName {
+    font-size: 36px;
+  }
+
+  .aboutMovie {
+    font-size: 8px;
+    width: 140px;
+  }
+
+  .ratings img {
+    width: 20px;
+    height: auto;
+  }
+
+  .metaLogo {
+    width: 12px !important;
+  }
+
+  .stat {
+    border-radius: 25px;
+  }
+
+  .StatMain {
+    font-size: 12px;
+  }
+
+  .Statcategory {
+    font-size: 8px;
+  }
 }

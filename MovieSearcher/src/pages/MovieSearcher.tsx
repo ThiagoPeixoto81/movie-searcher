@@ -23,12 +23,12 @@ export default function MovieSearcher() {
     let res = await req.json();
     console.log(res)
 
-    if (res.Response == "False"){
+    if (res.Response == "False") {
       setLoading(true)
       setLoader(false)
       setError(`${res.Error}`)
 
-    } else{
+    } else {
 
       const { Poster, Title, Plot, imdbRating, Metascore, Actors, Director, Writer, Genre, Released, BoxOffice, Country } = res;
 
@@ -50,7 +50,7 @@ export default function MovieSearcher() {
       setLoading(false)
 
     }
-    
+
   }
 
   function enterSearch(e: KeyboardEvent) {
@@ -62,15 +62,15 @@ export default function MovieSearcher() {
   return (
     <>
       <div className='searcher'>
-        <img src={MsLogo} className='mb-3' />
-        <div className="typeHere d-flex justify-content-center w-100 mb-5">
+        <img src={MsLogo} className='mb-3 mt-4 mt-sm-0' />
+        <div className="typeHere d-flex justify-content-center w-100 mb-5 ">
 
           <input className='form-control me-4 ps-4 fw-normal' type="text" placeholder='Search one movie...' onChange={(e) => { setInputValue(e.target.value) }} onKeyDown={(e) => { enterSearch(e) }} />
 
           <button className='btn btn-primary' onClick={() => { getMovie(inputValue) }}><MagnifyingGlass size={24} color="#ffffff" weight="fill" /></button>
         </div>
 
-        {loading ? <CardError msg={error} loader={loader}/> : <MovieCard {...movie} />}
+        {loading ? <CardError msg={error} loader={loader} /> : <MovieCard {...movie} />}
 
       </div>
     </>
