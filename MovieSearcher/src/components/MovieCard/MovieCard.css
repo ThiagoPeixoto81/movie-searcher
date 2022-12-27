@@ -3,6 +3,7 @@
   background-color: #565656 !important;
   min-width: 550px;
   width: auto !important;
+  max-width: 90vw;
   min-height: 535px;
   height: auto !important;
   max-height: 90vh;

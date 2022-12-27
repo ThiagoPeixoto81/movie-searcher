@@ -1,5 +1,4 @@
 import React from 'react'
-import { ErrorProps } from '../../types/ErrorProps'
 import "./CardError.css"
 
 

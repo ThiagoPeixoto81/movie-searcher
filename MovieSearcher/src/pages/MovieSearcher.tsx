@@ -4,7 +4,6 @@ import MsLogo from '../assets/logoMS.svg'
 import { MagnifyingGlass } from "phosphor-react";
 import MovieCard from '../components/MovieCard/MovieCard';
 import CardError from '../components/CardError/CardError';
-import { ErrorProps } from '../types/ErrorProps';
 
 export default function MovieSearcher() {
   const [inputValue, setInputValue] = useState("")
