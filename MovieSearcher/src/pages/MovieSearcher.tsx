@@ -18,7 +18,7 @@ export default function MovieSearcher() {
     setLoader(true)
     setError("")
 
-    let req = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=fd0f5ec4&t=${movieName}`)
+    let req = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=fd0f5ec4&t=${movieName}`)
 
     let res = await req.json();
     console.log(res)
