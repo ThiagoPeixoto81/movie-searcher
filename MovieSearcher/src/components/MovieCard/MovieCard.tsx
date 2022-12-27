@@ -1,17 +1,16 @@
 import React from 'react'
-import "../components/MovieCard.css"
-import ImdbLogo from '../assets/imdb.svg'
-import TomatoesLogo from '../assets/tomatoes.svg'
-import MetaLogo from '../assets/metacritic.svg'
+import "./MovieCard.css"
+import ImdbLogo from '../../assets/imdb.svg'
+import MetaLogo from '../../assets/metacritic.svg'
 import { Person, VideoCamera, FilmSlate, Calendar, Money, Flag, Quotes } from 'phosphor-react'
-import { MovieProps } from '../types/MovieProps'
+import { MovieProps } from '../../types/MovieProps'
 
 
 
 export default function MovieCard(props: MovieProps) {
     return (
-        <div className="card">
-            <div className="movieTitle w-100 d-flex justify-content-start align-items-center mt-4">
+        <div className="card p-5">
+            <div className="movieTitle w-100 d-flex justify-content-start align-items-center">
                 <img src={props.Poster} alt="Movie Poster" className='poster me-5' />
 
                 <div className='movieInfo text-start'>

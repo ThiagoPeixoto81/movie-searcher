@@ -1,0 +1,60 @@
+.card {
+  border: none;
+  background-color: #565656 !important;
+  min-width: 1000px !important;
+  width: auto !important;
+  min-height: 535px;
+  height: auto !important;
+
+  box-shadow: 24px 23px 24px rgba(0, 0, 0, 0.25);
+  border-radius: 40px !important;
+
+  font-family: "Oswald", sans-serif;
+}
+
+.poster {
+  width: 175px;
+  height: auto;
+}
+
+.movieName {
+  font-size: 72px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.aboutMovie {
+  color: #fff;
+  width: 400px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.ratings {
+  color: #fff;
+  font-size: 14px;
+}
+
+.ratings img {
+  width: 50px;
+  height: auto;
+}
+
+.metaLogo {
+  width: 25px !important;
+}
+
+.stat {
+  background-color: #5b66f0;
+  border-radius: 30px;
+}
+
+.StatMain {
+  color: #fff;
+  font-size: 20px;
+}
+
+.Statcategory {
+  color: #bdbdbd;
+  font-size: 14px;
+}

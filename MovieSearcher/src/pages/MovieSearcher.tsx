@@ -2,38 +2,55 @@ import React, { useState } from 'react'
 import "../pages/MovieSearcher.css"
 import MsLogo from '../assets/logoMS.svg'
 import { MagnifyingGlass } from "phosphor-react";
-import MovieCard from '../components/MovieCard';
+import MovieCard from '../components/MovieCard/MovieCard';
+import CardError from '../components/CardError/CardError';
+import { ErrorProps } from '../types/ErrorProps';
 
 export default function MovieSearcher() {
   const [inputValue, setInputValue] = useState("")
   const [movie, setMovie] = useState(Object)
   const [loading, setLoading] = useState(true)
+  const [loader, setLoader] = useState(false)
+  const [error, setError] = useState("Search your movie on the input on the top of the page")
 
   async function getMovie(movieName: string) {
+    setLoading(true)
+    setLoader(true)
+    setError("")
 
     let req = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=fd0f5ec4&t=${movieName}`)
 
     let res = await req.json();
+    console.log(res)
 
-    const { Poster, Title, Plot, imdbRating, Metascore, Actors, Director, Writer, Genre, Released, BoxOffice, Country } = res;
+    if (res.Response == "False"){
+      setLoading(true)
+      setLoader(false)
+      setError(`${res.Error}`)
 
-    const movie = {
-      Poster, Title,
-      Plot,
-      imdbRating,
-      Metascore,
-      Actors,
-      Director,
-      Writer,
-      Genre,
-      Released,
-      BoxOffice,
-      Country
+    } else{
+
+      const { Poster, Title, Plot, imdbRating, Metascore, Actors, Director, Writer, Genre, Released, BoxOffice, Country } = res;
+
+      const movie = {
+        Poster, Title,
+        Plot,
+        imdbRating,
+        Metascore,
+        Actors,
+        Director,
+        Writer,
+        Genre,
+        Released,
+        BoxOffice,
+        Country
+      }
+
+      setMovie(movie)
+      setLoading(false)
+
     }
-
-    setMovie(movie)
-    setLoading(false)
-
+    
   }
 
   function enterSearch(e: KeyboardEvent) {
@@ -53,12 +70,7 @@ export default function MovieSearcher() {
           <button className='btn btn-primary' onClick={() => { getMovie(inputValue) }}><MagnifyingGlass size={24} color="#ffffff" weight="fill" /></button>
         </div>
 
-        {loading ? <div className='loadingDiv d-flex flex-column align-items-center justify-content-center'>
-          <div className="spinner-border text-light" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </div>
-          <span className='loadingSub mt-4'>Search your movie/serie in the box on the top of the page</span>
-        </div> : <MovieCard {...movie} />}
+        {loading ? <CardError msg={error} loader={loader}/> : <MovieCard {...movie} />}
 
       </div>
     </>
