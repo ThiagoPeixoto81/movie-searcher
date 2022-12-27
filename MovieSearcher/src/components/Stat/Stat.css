@@ -1,0 +1,14 @@
+.stat {
+    background-color: #5b66f0;
+    border-radius: 30px;
+}
+
+.StatMain {
+    color: #fff;
+    font-size: 16px;
+}
+
+.Statcategory {
+    color: #bdbdbd;
+    font-size: 14px;
+}
