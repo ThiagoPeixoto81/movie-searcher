@@ -14,7 +14,7 @@ export default function MovieCard(props: MovieProps) {
                 <img src={props.Poster} alt="Movie Poster" className='poster me-4 me-sm-5' />
 
                 <div className='movieInfo text-start'>
-                    <h1 className='movieName d-inline-block text-truncate'>{props.Title}</h1>
+                    <h1 className='movieName'>{props.Title}</h1>
                     <p className='aboutMovie'>{props.Plot}</p>
 
                     <div className='ratings mt-5 d-flex'>
