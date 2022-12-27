@@ -20,6 +20,10 @@
   min-height: 535px;
 }
 
+.card.Error span {
+  font-size: 32px;
+}
+
 @media (max-width: 894px) {
   .card {
     min-width: none !important;
@@ -36,4 +40,9 @@
     max-width: none !important;
     max-height: none !important;
   }
+
+  .card.Error span {
+    font-size: 14px;
+  }
+
 }

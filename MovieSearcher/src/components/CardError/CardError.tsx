@@ -12,7 +12,7 @@ export default function CardError(props: any) {
             <span className="visually-hidden">Loading...</span>
           </div>}
 
-          <span className='loadingSub mt-4 fs-1'>{props.msg}</span>
+          <span className='loadingSub mt-4 text-center'>{props.msg}</span>
         </div>
       </div>
     </div>
