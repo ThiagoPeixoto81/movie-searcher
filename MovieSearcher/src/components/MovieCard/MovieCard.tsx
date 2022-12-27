@@ -13,7 +13,7 @@ export default function MovieCard(props: MovieProps) {
             <div className="movieTitle w-100 d-flex justify-content-start align-items-center ms-4">
                 <img src={props.Poster} alt="Movie Poster" className='poster me-4 me-sm-5' />
 
-                <div className='movieInfo text-start'>
+                <div className='movieInfo text-wrap'>
                     <h1 className='movieName'>{props.Title}</h1>
                     <p className='aboutMovie'>{props.Plot}</p>
 
