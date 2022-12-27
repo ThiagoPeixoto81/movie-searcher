@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/home' element={<MovieSearcher />} />
+        <Route path='/' element={<MovieSearcher />} />
       </Routes>
     </>
 
