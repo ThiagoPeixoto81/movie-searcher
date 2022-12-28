@@ -1,5 +1,5 @@
 :root {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Overpass', sans-serif;
   font-size: 62.5%;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -7,7 +7,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  ---background-color: #3A3A3A;
+  ---background-color: #000;
+  ---primaryColor: #CCCCCC;
 }
 
 body {
