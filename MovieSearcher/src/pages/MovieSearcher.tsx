@@ -1,4 +1,4 @@
-import React, { useState, KeyboardEvent } from 'react'
+import React, { useState, KeyboardEvent, MouseEvent } from 'react'
 import "../pages/MovieSearcher.css"
 import MsLogo from '../assets/logoMS.svg'
 import { MagnifyingGlass } from "phosphor-react";

@@ -1,0 +1,8 @@
+.title {
+    letter-spacing: 0.17em;
+}
+
+.movieCard img {
+    width: 95px !important;
+    height: auto;
+}

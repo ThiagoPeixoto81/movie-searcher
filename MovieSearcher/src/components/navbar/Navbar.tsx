@@ -9,8 +9,8 @@ export default function Navbar() {
             <div className="container-fluid d-flex justify-content-spacebetween align-items-center" >
                 <img className='navbar-brand' src={LogoMs} alt="Logo Movie Searcher" />
                 <div className="input-group">
-                    <input type="text" className="form-control bg-transparent" placeholder="Pesquise um filme aqui..." aria-label="Username" aria-describedby="basic-addon1" />
-                    <span className="input-group-text pe-4" id="basic-addon1"><MagnifyingGlass size={20} color="#ffffff" weight="bold" ></MagnifyingGlass></span>
+                    <input type="text" className="form-control bg-transparent ps-md-4" placeholder="Pesquise um filme aqui..." aria-label="Username" aria-describedby="basic-addon1" />
+                    <span className="input-group-text pe-4 bg-transparent" id="basic-addon1"><MagnifyingGlass size={20} color="#ffffff" weight="bold" ></MagnifyingGlass></span>
                 </div>
             </div >
         </nav >

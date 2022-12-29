@@ -3,9 +3,13 @@ nav img {
     height: auto;
 }
 
+.input-group {
+    width: auto !important;
+}
+
 .input-group-text {
 
-    border-radius: 30px;
+    border-radius: 0px 30px 30px 0px !important;
     border: 2px solid #FFFFFF !important;
     border-left: none !important;
     cursor: pointer;
@@ -38,4 +42,16 @@ nav img {
 .form-control::placeholder {
     color: #ccc !important;
     font-size: 14px !important;
+}
+
+@media (min-width: 768px) {
+    nav img {
+        width: 250px;
+        height: auto;
+    }
+
+    .form-control {
+        width: 270px !important;
+    }
+
 }
