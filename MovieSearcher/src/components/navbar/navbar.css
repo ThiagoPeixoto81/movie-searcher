@@ -55,3 +55,20 @@ nav img {
     }
 
 }
+
+@media (max-width: 475px) {
+    nav img {
+        width: 120px !important;
+    }
+
+
+    .form-control {
+        width: 90px !important;
+        height: 35px !important;
+        font-size: 10px !important;
+    }
+
+    .form-control::placeholder {
+        font-size: 10px !important;
+    }
+}

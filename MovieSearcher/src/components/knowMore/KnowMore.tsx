@@ -2,6 +2,7 @@ import { ArrowRight } from 'phosphor-react'
 import React, { useEffect, useState } from 'react'
 import Footer from '../footer/Footer'
 import MoreMovies from '../MoreMovies/MoreMovies'
+import Carrousel from '../swipers/Carrousel'
 import './KnowMore.css'
 
 
@@ -17,11 +18,11 @@ export default function KnowMore() {
     }, [])
 
     async function defineHome() {
-        const searchParams = ["cars", "american", "last", "soccer", "war", "batman", "fast"]
+        const searchParams = ["cars", "american", "last", "soccer", "war", "batman", "fast", "love", "adventure"]
         let index = Math.floor(Math.random() * searchParams.length)
         let search = searchParams[index]
 
-        let req = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=fd0f5ec4&s=${search}`)
+        let req = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=fd0f5ec4&s=${search}&type=movie`)
         let res = await req.json();
 
         let moviesOnTheScreen = res.Search
@@ -32,25 +33,38 @@ export default function KnowMore() {
         setRest(moviesOnTheScreen)
     }
 
-    console.log(rest)
-    return (
-        <div className='d-flex justify-content-center flex-column align-items-center mt-5 pt-5'>
-            <div className='d-flex flex-column align-items-center mb-5'>
-                <img src={poster} alt="Poster" className='mb-4' />
+    if (rest.length > 0) {
+        return (
+            <div className='d-flex justify-content-center flex-column align-items-center mt-5 pt-5 w-100'>
+                <div className='d-flex flex-column flex-md-row align-items-center justify-content-md-start mb-5 w-100 ms-md-5'>
+                    <img src={poster} alt="Poster" className='mb-4' />
 
-                <h2 className='text-wrap text-truncate d-inline-block text-uppercase'>{title}</h2>
-                <span className='mb-5'>{year}</span>
+                    <div className='ms-md-5 d-flex flex-column align-items-center align-items-md-start w-100'>
+                        <h2 className='text-wrap text-truncate d-inline-block text-uppercase text-md-start'>{title}</h2>
+                        <span className='mb-5 d-md-block'>{year}</span>
 
-                <div className='seeMoreDiv d-flex align-items-center'>
-                    <span className='seemoreText me-2'>Veja mais sobre este filme</span>
-                    <div className='arrow-animation'>
-                        <ArrowRight size={16} color="#ffffff" weight="bold"></ArrowRight>
+
+                        <div className='seeMoreDiv d-flex align-items-center'>
+                            <span className='seemoreText me-2'>Veja mais sobre este filme</span>
+                            <div className='arrow-animation'>
+                                <ArrowRight size={16} color="#ffffff" weight="bold"></ArrowRight>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <MoreMovies {...rest} />
+                <Footer />
+            </div>
+        )
+    } else {
+        return (
+            <div className='h-100 d-flex justify-content-center align-items-center'>
+                <div className="spinner-border text-light" role="status">
+                    <span className="visually-hidden">Loading...</span>
                 </div>
             </div>
 
-            <MoreMovies arrayPreCarrosel={rest} />
-            <Footer />
-        </div>
-    )
+        )
+    }
 }
+

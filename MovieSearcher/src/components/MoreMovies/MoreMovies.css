@@ -6,3 +6,14 @@
     width: 95px !important;
     height: auto;
 }
+
+@media (min-width: 768px) {
+    .title.moremovies {
+        font-size: 20px !important;
+    }
+
+    .movieCard img {
+        width: 160px !important;
+        height: auto;
+    }
+}

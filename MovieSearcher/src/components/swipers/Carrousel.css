@@ -9,3 +9,15 @@
 .sliders {
     user-select: none;
 }
+
+.sliders:hover {
+    transform: scale(.9);
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .cardTitle {
+        font-size: 14px;
+        height: 40px;
+    }
+}
