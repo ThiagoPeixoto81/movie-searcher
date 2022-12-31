@@ -5,7 +5,9 @@ import Navbar from '../../components/navbar/Navbar'
 export default function Home() {
     return (
         <div className='container'>
-            <Navbar />
+            <Navbar setsearch={function (value: string): void {
+                throw new Error('Function not implemented.')
+            } } />
             <KnowMore />
         </div>
 

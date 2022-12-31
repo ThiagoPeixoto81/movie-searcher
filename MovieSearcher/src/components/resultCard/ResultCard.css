@@ -1,0 +1,46 @@
+.resultcard {
+  width: 100%;
+  border: 1px solid #cccccc;
+  border-radius: 15px;
+}
+
+.resultcard img {
+  width: 95px !important;
+  height: auto;
+}
+
+.SearchTitle {
+  font-family: "Overpass";
+  font-style: italic;
+  font-weight: 900;
+  font-size: 32px;
+  letter-spacing: 0.18em;
+
+  margin: 0;
+  padding: 0;
+
+  color: #cccccc;
+}
+
+.imdbId {
+  font-family: "Overpass";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.18em;
+
+  color: #cccccc;
+}
+
+.year {
+  font-family: "Overpass";
+  font-style: italic;
+  font-weight: 900;
+  font-size: 18px;
+
+  letter-spacing: 0.18em;
+  padding: 0;
+  margin-top: 5px;
+
+  color: #cccccc;
+}

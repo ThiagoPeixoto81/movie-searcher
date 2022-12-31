@@ -18,7 +18,7 @@ export default function KnowMore() {
     }, [])
 
     async function defineHome() {
-        const searchParams = ["cars", "american", "last", "soccer", "war", "batman", "fast", "love", "adventure"]
+        const searchParams = ["cars", "american", "last", "soccer", "war", "batman", "fast", "love", "adventure", "brazil"]
         let index = Math.floor(Math.random() * searchParams.length)
         let search = searchParams[index]
 
