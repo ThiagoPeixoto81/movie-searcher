@@ -8,3 +8,33 @@
 
   color: #cccccc;
 }
+
+.divError {
+  height: 75vh !important;
+
+}
+
+.error {
+  font-family: "Overpass";
+  font-style: italic;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 30px;
+
+  color: #cccccc;
+}
+
+.resultsShow {
+  animation: upsideDown .8s ease-out !important;
+}
+
+
+@keyframes upsideDown {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

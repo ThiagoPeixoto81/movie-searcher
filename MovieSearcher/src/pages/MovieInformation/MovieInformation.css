@@ -1,0 +1,42 @@
+.click {
+    cursor: pointer !important;
+}
+
+.detailedPoster {
+    width: 160px;
+    height: auto;
+}
+
+.MovieName {
+    font-family: 'Overpass';
+    font-style: italic;
+    font-weight: 900;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 0.3em;
+    color: #CCCCCC;
+
+    width: 80%;
+}
+
+.imdb {
+    width: 30px !important;
+    height: auto;
+}
+
+.metascore {
+    width: 20px !important;
+}
+
+.moviePlot {
+    width: 80%;
+    font-family: 'Overpass';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 13px;
+    text-align: center;
+
+    color: #CCCCCC;
+
+}

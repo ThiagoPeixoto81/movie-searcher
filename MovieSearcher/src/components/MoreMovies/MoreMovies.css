@@ -1,3 +1,8 @@
+.more {
+    transform: translateX(0);
+    animation: slide 1.2s ease-out !important;
+}
+
 .title {
     letter-spacing: 0.17em;
 }

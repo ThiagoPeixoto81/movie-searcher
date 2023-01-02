@@ -1,5 +1,6 @@
 import { ArrowRight } from 'phosphor-react'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Footer from '../footer/Footer'
 import MoreMovies from '../MoreMovies/MoreMovies'
 import Carrousel from '../swipers/Carrousel'
@@ -12,6 +13,7 @@ export default function KnowMore() {
     const [title, setTitle] = useState("")
     const [year, setYear] = useState("")
     const [rest, setRest] = useState<[]>([])
+    const [url, setUrl] = useState("")
 
     useEffect(() => {
         defineHome();
@@ -31,11 +33,14 @@ export default function KnowMore() {
         setTitle(moviesOnTheScreen[0].Title)
         setYear(`(${moviesOnTheScreen[0].Year})`)
         setRest(moviesOnTheScreen)
+
+        let MovieUrl = (moviesOnTheScreen[0].Title).replace(".", "")
+        setUrl("/movieinfo/" + MovieUrl)
     }
 
     if (rest.length > 0) {
         return (
-            <div className='d-flex justify-content-center flex-column align-items-center mt-5 pt-5 w-100'>
+            <div className='d-flex justify-content-center flex-column align-items-center mt-5 pt-5 w-100 main'>
                 <div className='d-flex flex-column flex-md-row align-items-center justify-content-md-start mb-5 w-100 ms-md-5'>
                     <img src={poster} alt="Poster" className='mb-4' />
 
@@ -45,7 +50,7 @@ export default function KnowMore() {
 
 
                         <div className='seeMoreDiv d-flex align-items-center'>
-                            <span className='seemoreText me-2'>Veja mais sobre este filme</span>
+                            <Link to={url} className='text-decoration-none'><span className='seemoreText me-2'>Veja mais sobre este filme</span></Link>
                             <div className='arrow-animation'>
                                 <ArrowRight size={16} color="#ffffff" weight="bold"></ArrowRight>
                             </div>

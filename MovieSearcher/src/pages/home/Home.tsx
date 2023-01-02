@@ -7,7 +7,9 @@ export default function Home() {
         <div className='container'>
             <Navbar setsearch={function (value: string): void {
                 throw new Error('Function not implemented.')
-            } } />
+            }} searchMovie={function (): void {
+                throw new Error('Function not implemented.')
+            }} />
             <KnowMore />
         </div>
 
