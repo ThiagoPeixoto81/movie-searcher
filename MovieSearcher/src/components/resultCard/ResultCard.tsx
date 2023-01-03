@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 import './ResultCard.css'
 
 type resultProps = {
-    poster: string,
+    poster: string | undefined,
     title: string,
-    imdbId: string,
-    year: string
+    imdbId: string | undefined,
+    year: string | undefined
 }
 
 export default function ResultCard({ poster, title, imdbId, year }: resultProps) {

@@ -136,21 +136,24 @@ export default function MovieInformation() {
             </div>
         )
     } else {
-        <div className="container">
-            <Navbar setsearch={function (value: string): void {
-                throw new Error('Function not implemented.')
-            }} searchMovie={function (): void {
-                throw new Error('Function not implemented.')
-            }} />
+        return (
+            <div className="container">
+                <Navbar setsearch={function (value: string): void {
+                    throw new Error('Function not implemented.')
+                }} searchMovie={function (): void {
+                    throw new Error('Function not implemented.')
+                }} />
 
-            <div className="loader">
-                <div className='h-100 d-flex justify-content-center align-items-center'>
-                    <div className="spinner-border text-light" role="status">
-                        <span className="visually-hidden">Loading...</span>
+                <div className="loader">
+                    <div className='h-100 d-flex justify-content-center align-items-center'>
+                        <div className="spinner-border text-light" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        )
+
     }
 
 

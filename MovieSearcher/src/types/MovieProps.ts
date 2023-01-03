@@ -10,5 +10,8 @@ export type MovieProps = {
     Genre: string,
     Released?: string,
     BoxOffice?: string
-    Country: string
+    Country: string,
+    Year: string,
+    imdbID: string,
+
 }
