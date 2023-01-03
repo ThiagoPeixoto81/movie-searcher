@@ -15,3 +15,13 @@
     line-height: 13px;
     color: #CCCCCC;
 }
+
+@media (min-width: 1024px) {
+    .StatMain {
+        font-size: 20px;
+    }
+
+    .Statcategory {
+        font-size: 18px;
+    }
+}

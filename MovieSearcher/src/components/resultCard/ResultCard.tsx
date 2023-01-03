@@ -1,5 +1,6 @@
 import { ArrowRight, Calendar } from 'phosphor-react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './ResultCard.css'
 
 type resultProps = {
@@ -11,7 +12,7 @@ type resultProps = {
 
 export default function ResultCard({ poster, title, imdbId, year }: resultProps) {
     return (
-        <div className='resultcard mt-5 p-5 d-flex justify-content-between align-items-center'>
+        <div className='resultcard mt-5 p-sm-5 p-4 d-flex justify-content-between align-items-center me-sm-4'>
             <div className='d-flex align-items-center'>
                 <img className='me-5' src={poster} alt={title} />
 
@@ -26,7 +27,8 @@ export default function ResultCard({ poster, title, imdbId, year }: resultProps)
                 </div>
             </div>
 
-            <a href=""><ArrowRight size={48} color="#ffffff" weight="bold" /></a>
+            <Link to={"/movieinfo/" + title.replace(".", "")}><ArrowRight size={48} color="#ffffff" weight="bold" /></Link>
+
         </div>
     )
 }

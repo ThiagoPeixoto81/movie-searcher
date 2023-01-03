@@ -51,3 +51,31 @@
 .infoSearch {
   width: 150px !important;
 }
+
+@media (min-width: 1024px) {
+  .resultcard {
+    width: 40% !important;
+  }
+
+  .SearchTitle {
+    width: 100%;
+  }
+
+  .infoSearch {
+    width: 60% !important
+  }
+}
+
+@media (max-width: 450px) {
+  .resultcard {
+    width: 90% !important;
+  }
+
+  .infoSearch {
+    width: 110px !important;
+  }
+
+  .SearchTitle {
+    font-size: 14px;
+  }
+}

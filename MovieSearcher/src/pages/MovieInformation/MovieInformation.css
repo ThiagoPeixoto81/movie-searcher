@@ -40,3 +40,43 @@
     color: #CCCCCC;
 
 }
+
+.mainAnimation {
+    animation: slide .8s ease-out forwards !important;
+}
+
+.statInfo {
+    animation: slide 1.2s ease-out forwards !important;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .MovieName {
+        font-size: 32px;
+        width: 100%;
+    }
+
+    .moviePlot {
+        font-size: 18px;
+        line-height: normal;
+    }
+
+    .rating {
+        font-size: 16px;
+    }
+
+    .plotRating {
+        order: 1;
+    }
+}
