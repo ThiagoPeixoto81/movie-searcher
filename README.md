@@ -5,18 +5,21 @@
 
 ## 💭 Descrição do Projeto
 <p align="left">Projeto desenolvido com o intuito de iniciar meu aprendizado em React, a ideia é bem simples, um site que mostra filmes e seus respectivos dados como Diretor, ano de produção, atores principais e outras características.</p>
-
+<br />
+	
 ## ✅ Status do projeto
 <h4 align="left"> 
 	🚧 Working in progress...  🚧
 </h4>
+<br />	
 
 ## 👨🏿‍🎓 Features
 - [x] Exibir os filmes
 - [x] Usuário pesquisar os filmes que deseja
 - [ ] Cadastro e personalização do usuário
 - [ ] Dark e Light Mode
-  
+<br /> 
+	
 ## 💻 Tecnologias
   
 As seguintes ferramentas foram usadas na construção do projeto:
