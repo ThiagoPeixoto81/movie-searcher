@@ -1,6 +1,4 @@
-import { MagnifyingGlass } from "phosphor-react";
-import React, { KeyboardEvent } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LogoMs from "./logoMS.svg";
 import InputSearch from "../InputSearch/InputSearch";
 import "./navbar.css";

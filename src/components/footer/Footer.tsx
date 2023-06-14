@@ -9,6 +9,7 @@ export default function Footer() {
         <a
           href="https://github.com/ThiagoPeixoto81"
           target="_blank"
+          rel="noreferrer"
           className="text-decoration-none"
         >
           <img className="me-1" src={ThisgoLogo} alt="Obrigado!" />
@@ -21,6 +22,7 @@ export default function Footer() {
           className="thisgo text-decoration-none"
           href="https://www.omdbapi.com/"
           target="_blank"
+          rel="noreferrer"
         >
           OMDb API
         </a>

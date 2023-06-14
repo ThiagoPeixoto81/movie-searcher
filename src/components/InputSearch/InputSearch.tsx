@@ -1,6 +1,6 @@
 import { MagnifyingGlass, X } from "phosphor-react";
-import React, { KeyboardEvent, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { KeyboardEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./InputSearch.css";
 
 interface Iinput {
