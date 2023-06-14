@@ -86,4 +86,12 @@
     .form-control::placeholder {
         font-size: 10px !important;
     }
+
+    .form-control,
+    .form-control:focus,
+    .form-control:active {
+
+        font-size: 10px !important;
+    }
+
 }

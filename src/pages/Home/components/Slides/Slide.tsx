@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import { SwiperSlide } from "swiper/react";
 
 type slideProps = {
@@ -6,7 +6,7 @@ type slideProps = {
   title: string;
 };
 
-export default function Slide({ poster, title }: slideProps) {
+function Slide({ poster, title }: slideProps) {
   return (
     <SwiperSlide className="sliders">
       <div className="movieCard mt-5 d-flex flex-column align-items-center">
@@ -18,3 +18,5 @@ export default function Slide({ poster, title }: slideProps) {
     </SwiperSlide>
   );
 }
+
+export default memo(Slide);

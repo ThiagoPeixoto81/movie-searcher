@@ -1,17 +1,16 @@
 import { FilmSlate } from "phosphor-react";
-import Carrousel from "../swipers/Carrousel";
+import Carrousel from "../Swipers/Carrousel";
 import "./MoreMovies.css";
-import { MovieProps } from "../../types/MovieProps";
+import { MovieProps } from "../../../../@types/MovieProps";
 
 export default function MoreMovies({
   arrayInCarrossel,
 }: {
   arrayInCarrossel: MovieProps[];
 }) {
-  console.log(arrayInCarrossel);
   return (
     <div className="mt-5 w-100 mb-5 more">
-      <div className="title ms-5 d-flex align-items-center">
+      <div className="title d-flex align-items-center">
         <FilmSlate
           className="me-3"
           size={25}

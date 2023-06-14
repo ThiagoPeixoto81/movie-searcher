@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Footer from "../../components/footer/Footer";
-import Navbar from "../../components/navbar/Navbar";
-import ResultCard from "../../components/resultCard/ResultCard";
-import { MovieProps } from "../../types/MovieProps";
-import "./Search.css";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
+import ResultCard from "./components/ResultCard/ResultCard";
+import { MovieProps } from "../../@types/MovieProps";
+import "./index.css";
+import { searchMovie } from "../../services/api";
+import { Loader } from "../../components/Loader";
 
 export default function Search() {
   const [searchAfter, setsearch] = useState<string | undefined>("");
@@ -14,39 +16,35 @@ export default function Search() {
   const { search } = useParams();
 
   useEffect(() => {
-    searchMovie(search);
+    getMovieList(search!);
     setsearch(search);
-  }, []);
+  }, [search]);
 
-  async function searchMovie(movie: string | undefined) {
+  async function getMovieList(movie: string) {
     if (movie === "") {
       setResult([]);
     } else {
       setResult([]);
       setError("");
 
-      let req = await fetch(
-        `https://www.omdbapi.com/?i=tt3896198&apikey=fd0f5ec4&s=${movie}&type=movie`
-      );
+      const foundedMovie = await searchMovie(movie);
 
-      let res = await req.json();
-      console.log(res);
-
-      if (res.Response === "True" && search !== "") {
-        setResult(res.Search);
-        console.log(result);
-      } else if (search === "") {
-        setError("Procure um filme!");
-      }
-
-      setError(res.Error);
+      foundedMovie.Response === "True" && search != ""
+        ? setResult(foundedMovie.Search)
+        : setError("Nenhum filme encontrado. Tente novamente!");
     }
   }
 
   return (
-    <div className="container">
-      <Navbar search={search} setsearch={setsearch} searchMovie={searchMovie} />
-      <div className="w-100 pb-5">
+    <>
+      <Navbar
+        search={search}
+        setsearch={setsearch}
+        searchMovie={searchMovie}
+        alreadyOpen={true}
+      />
+
+      <div className="w-100 pb-sm-5">
         <h3 className="searchingText text-center mt-5 text-uppercase">
           {searchAfter}
         </h3>
@@ -68,13 +66,12 @@ export default function Search() {
             })}
           </div>
         ) : (
-          <div className="divError d-flex justify-content-center align-items-center w-100">
+          <div className="divError d-flex flex-column gap-5 justify-content-center align-items-center w-100">
+            <Loader />
             <p className="error text-center">{error}</p>
           </div>
         )}
       </div>
-
-      <Footer />
-    </div>
+    </>
   );
 }

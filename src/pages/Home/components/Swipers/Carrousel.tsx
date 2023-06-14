@@ -1,4 +1,3 @@
-import React, { ReactNode, useRef, useState } from "react";
 import { Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide, SwiperProps } from "swiper/react";
 
@@ -6,9 +5,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./Carrousel.css";
-import Slide from "../Slides/Slide";
 import { Link } from "react-router-dom";
-import { MovieProps } from "../../types/MovieProps";
+import { MovieProps } from "../../../../@types/MovieProps";
 
 export default function Carrousel({
   arrayCarrossel,
@@ -39,7 +37,7 @@ export default function Carrousel({
         {arrayCarrossel.map((movie: MovieProps, index) => {
           if (index > 0) {
             return (
-              <SwiperSlide className="sliders">
+              <SwiperSlide className="sliders" key={index}>
                 <Link
                   to={"/movieinfo/" + movie.Title.replace(".", "")}
                   className="text-decoration-none"
