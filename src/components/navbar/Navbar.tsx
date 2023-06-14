@@ -19,7 +19,7 @@ export default function Navbar({
   alreadyOpen = false,
 }: INavbar) {
   return (
-    <nav className="navbar py-4 mt-4">
+    <nav className="navbar py-sm-4 mt-4">
       <div className="container-fluid d-flex justify-content-spacebetween align-items-center">
         <Link to="/">
           <img
