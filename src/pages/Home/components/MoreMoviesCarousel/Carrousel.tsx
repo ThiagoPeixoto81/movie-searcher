@@ -7,6 +7,8 @@ import "swiper/css/navigation";
 import "./Carrousel.css";
 import { Link } from "react-router-dom";
 import { MovieProps } from "../../../../@types/MovieProps";
+import ScrollContainer from "react-indiana-drag-scroll";
+import Slide from "../Slides/Slide";
 
 export default function Carrousel({
   arrayCarrossel,
@@ -15,7 +17,32 @@ export default function Carrousel({
 }) {
   return (
     <>
-      <Swiper
+      <ScrollContainer
+        horizontal={true}
+        style={{
+          width: "100%",
+          height: "auto",
+          display: "flex",
+          gap: "30px",
+        }}
+        className="movieScroll"
+      >
+        {arrayCarrossel.map((movie: MovieProps, index) => {
+          if (index > 0) {
+            return (
+              <Link
+                to={"/movieinfo/" + movie.Title.replace(".", "")}
+                className="text-decoration-none"
+                key={movie.imdbID}
+              >
+                <Slide poster={movie.Poster!} title={movie.Title}></Slide>
+              </Link>
+            );
+          }
+        })}
+      </ScrollContainer>
+
+      {/* <Swiper
         slidesPerView={3}
         spaceBetween={30}
         loop={true}
@@ -53,7 +80,7 @@ export default function Carrousel({
             );
           }
         })}
-      </Swiper>
+      </Swiper> */}
     </>
   );
 }

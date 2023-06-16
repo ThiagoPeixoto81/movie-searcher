@@ -10,11 +10,13 @@ import { Loader } from "../../components/Loader";
 export default function Home() {
   //HOOKS
   const [mainMovie, setMainMovie] = useState<MovieProps>();
-  const [allMovies, setAllMovies] = useState<[]>([]);
+  const [allMovies, setAllMovies] = useState<[] | null>(null);
   const [url, setUrl] = useState("");
 
   useEffect(() => {
-    defineHome();
+    if (allMovies === null) {
+      defineHome();
+    }
   }, []);
 
   async function defineHome() {
@@ -48,7 +50,7 @@ export default function Home() {
     setUrl("/movieinfo/" + MovieUrl);
   }
 
-  return allMovies.length > 0 ? (
+  return allMovies != null && allMovies.length > 0 ? (
     <div className="d-flex justify-content-center flex-column align-items-center mt-5 pt-5 w-100 main">
       <div className="d-flex flex-column flex-md-row align-items-center justify-content-md-start mb-5 w-100">
         <img src={mainMovie?.Poster} alt="Poster" className="mb-4" />

@@ -1,5 +1,5 @@
 import { FilmSlate } from "phosphor-react";
-import Carrousel from "../Swipers/Carrousel";
+import Carrousel from "../MoreMoviesCarousel/Carrousel";
 import "./MoreMovies.css";
 import { MovieProps } from "../../../../@types/MovieProps";
 
@@ -20,7 +20,7 @@ export default function MoreMovies({
         <span className="text-uppercase title moremovies">Mais filmes</span>
       </div>
 
-      <div className="ms-5 d-flex justify-content-around">
+      <div className="d-flex justify-content-around w-100">
         <Carrousel arrayCarrossel={arrayInCarrossel} />
       </div>
     </div>
