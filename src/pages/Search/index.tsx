@@ -5,7 +5,7 @@ import { MovieProps } from "../../@types/MovieProps";
 import "./index.css";
 import { searchMovie } from "../../services/api";
 import { Loader } from "../../components/Loader";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../components/NavbarT/Navbar";
 
 export default function Search() {
   const [searchAfter, setsearch] = useState<string | undefined>("");
