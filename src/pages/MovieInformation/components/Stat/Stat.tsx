@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from "react";
+import { ReactNode } from "react";
 import "./Stat.css";
 
 type StatProp = {

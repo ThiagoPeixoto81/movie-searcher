@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
-import Navbar from "../../components/Navbar/Navbar";
 import ResultCard from "./components/ResultCard/ResultCard";
 import { MovieProps } from "../../@types/MovieProps";
 import "./index.css";
 import { searchMovie } from "../../services/api";
 import { Loader } from "../../components/Loader";
+import Navbar from "../../components/Navbar/Navbar";
 
 export default function Search() {
   const [searchAfter, setsearch] = useState<string | undefined>("");
@@ -16,8 +15,10 @@ export default function Search() {
   const { search } = useParams();
 
   useEffect(() => {
-    getMovieList(search!);
-    setsearch(search);
+    if (search) {
+      getMovieList(search);
+      setsearch(search);
+    }
   }, [search]);
 
   async function getMovieList(movie: string) {

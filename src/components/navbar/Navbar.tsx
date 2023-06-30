@@ -26,12 +26,14 @@ export default function Navbar({
             alt="Logo Movie Searcher"
           />
         </Link>
-        <InputSearch
-          searchMovie={searchMovie!}
-          setsearch={setsearch!}
-          search={search}
-          AlreadyOpen={alreadyOpen}
-        />
+        {searchMovie && setsearch && (
+          <InputSearch
+            searchMovie={searchMovie}
+            setsearch={setsearch}
+            search={search}
+            AlreadyOpen={alreadyOpen}
+          />
+        )}
       </div>
     </nav>
   );

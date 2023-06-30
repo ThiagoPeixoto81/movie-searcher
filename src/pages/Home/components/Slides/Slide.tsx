@@ -1,5 +1,4 @@
 import { memo } from "react";
-import { SwiperSlide } from "swiper/react";
 
 type slideProps = {
   poster: string;
