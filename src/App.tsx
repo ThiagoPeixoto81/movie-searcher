@@ -1,8 +1,8 @@
 import { Router } from "./routes/Router";
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
 import "./App.css";
 import { useLocation } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const { pathname } = useLocation();
