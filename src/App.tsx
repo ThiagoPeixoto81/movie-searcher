@@ -1,22 +1,22 @@
-import React from 'react'
-import './App.css'
-
-import { Routes, Route } from 'react-router-dom'
-import Home from './pages/home/Home'
-import SearchingPage from './pages/Search/Search'
-import MovieInformation from './pages/MovieInformation/MovieInformation'
+import { Router } from "./routes/Router";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import "./App.css";
+import { useLocation } from "react-router-dom";
 
 function App() {
+  const { pathname } = useLocation();
+
   return (
     <>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/search/:search' element={<SearchingPage />} />
-        <Route path='/movieinfo/:movie' element={<MovieInformation />} />
-      </Routes>
-    </>
+      <div className="container d-flex justify-content-between flex-column px-4 px-sm-0">
+        {pathname.substring(0, 7) != "/search" && <Navbar />}
 
-  )
+        <Router />
+        <Footer />
+      </div>
+    </>
+  );
 }
 
-export default App
+export default App;

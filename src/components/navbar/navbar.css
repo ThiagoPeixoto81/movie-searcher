@@ -22,9 +22,9 @@ nav img {
 
 
     .form-control {
-        width: 90px !important;
-        height: 35px !important;
-        font-size: 10px !important;
+        width: 120px !important;
+        height: 30px !important;
+        font-size: 8px !important;
     }
 
     .form-control::placeholder {
