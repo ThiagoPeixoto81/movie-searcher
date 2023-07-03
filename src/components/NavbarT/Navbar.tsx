@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import LogoMs from "./logoMS.svg";
-import InputSearch from "../InputSearch/InputSearch";
-import "./navbar.css";
+import { Link } from 'react-router-dom';
+import LogoMs from './logoMS.svg';
+import InputSearch from '../InputSearch/InputSearch';
+import './navbar.css';
 
 interface INavbar {
   search?: string;
@@ -26,14 +26,13 @@ export default function Navbar({
             alt="Logo Movie Searcher"
           />
         </Link>
-        {searchMovie && setsearch && (
-          <InputSearch
-            searchMovie={searchMovie}
-            setsearch={setsearch}
-            search={search}
-            AlreadyOpen={alreadyOpen}
-          />
-        )}
+
+        <InputSearch
+          searchMovie={searchMovie!}
+          setsearch={setsearch!}
+          search={search}
+          AlreadyOpen={alreadyOpen}
+        />
       </div>
     </nav>
   );

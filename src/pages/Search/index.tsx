@@ -1,38 +1,38 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import ResultCard from "./components/ResultCard/ResultCard";
-import { MovieProps } from "../../@types/MovieProps";
-import "./index.css";
-import { searchMovie } from "../../services/api";
-import { Loader } from "../../components/Loader";
-import Navbar from "../../components/NavbarT/Navbar";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import ResultCard from './components/ResultCard/ResultCard';
+import { MovieProps } from '../../@types/MovieProps';
+import './index.css';
+import { searchMovie } from '../../services/api';
+import { Loader } from '../../components/Loader';
+import Navbar from '../../components/NavbarT/Navbar';
 
 export default function Search() {
-  const [searchAfter, setsearch] = useState<string | undefined>("");
+  const [searchAfter, setsearch] = useState<string | undefined>('');
   const [result, setResult] = useState<Array<MovieProps>>([]);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
 
   const { search } = useParams();
 
   useEffect(() => {
     if (search) {
-      getMovieList(search);
       setsearch(search);
+      searchAfter && getMovieList(searchAfter);
     }
   }, [search]);
 
   async function getMovieList(movie: string) {
-    if (movie === "") {
+    if (movie === '') {
       setResult([]);
     } else {
       setResult([]);
-      setError("");
+      setError('');
 
       const foundedMovie = await searchMovie(movie);
 
-      foundedMovie.Response === "True" && search != ""
+      foundedMovie.Response === 'True' && search != ''
         ? setResult(foundedMovie.Search)
-        : setError("Nenhum filme encontrado. Tente novamente!");
+        : setError('Nenhum filme encontrado. Tente novamente!');
     }
   }
 
